@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShipuxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShipuxinxiEntity" id="shipuxinxiMap">
+        <result property="shipumingcheng" column="shipumingcheng"/>
+        <result property="tupian" column="tupian"/>
+        <result property="shipufenlei" column="shipufenlei"/>
+        <result property="pengrenfangshi" column="pengrenfangshi"/>
+        <result property="zuofa" column="zuofa"/>
+        <result property="gongxiao" column="gongxiao"/>
+        <result property="shizhang" column="shizhang"/>
+        <result property="yuancailiao" column="yuancailiao"/>
+        <result property="dapeijinji" column="dapeijinji"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShipuxinxiVO" >
+		SELECT * FROM shipuxinxi  shipuxinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShipuxinxiVO" >
+		SELECT  shipuxinxi.* FROM shipuxinxi  shipuxinxi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShipuxinxiView" >
+
+		SELECT  shipuxinxi.* FROM shipuxinxi  shipuxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShipuxinxiView" >
+		SELECT * FROM shipuxinxi  shipuxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
